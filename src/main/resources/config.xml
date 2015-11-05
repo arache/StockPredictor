@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<app>
+    <init-settings>
+        <possession value="0"/>
+        <money value="100000.00"/>
+    </init-settings>
+
+    <policy-settings>
+        <commission min="5.00" rate="0.0005"/>
+        <tax rate="0.0011"/>
+        <settlement day="T+1"/>
+    </policy-settings>
+
+    <strategy-settings>
+        <strategy name="Spread">
+            <parameter name="spread" value="0.02"/>
+            <parameter name="base_value" value="OPEN"/>
+        </strategy>
+        <strategy name="MA">
+            <parameter name="days" value="5"/>
+            <parameter name="spread" value="0.02"/>
+        </strategy>
+        <strategy name="VWAP">
+            <parameter name="days" value="5"/>
+            <parameter name="spread" value="0.02"/>
+        </strategy>
+        <strategy name="PVWAP">
+            <parameter name="days" value="5"/>
+            <parameter name="spread" value="0.02"/>
+        </strategy>
+        <strategy name="VWAP_TURN">
+            <parameter name="days" value="50"/>
+            <parameter name="continue_days" value="1"/>
+        </strategy>
+    </strategy-settings>
+</app>
