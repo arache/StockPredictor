@@ -1,12 +1,12 @@
 package com.houjun.stockPredictor.strategies
 
 import com.houjun.stockPredictor.ConfigLoader
-import com.houjun.stockPredictor.bean.{Money, CandleStick}
+import com.houjun.stockPredictor.bean.CandleStick
 
 /**
-  * Created by arache on 15/11/6.
+  * Created by houjun on 15/11/6.
   *
-  * @author arache
+  * @author houjun
   */
 trait Strategy extends ConfigLoader {
 

@@ -1,9 +1,9 @@
 package com.houjun.stockPredictor.bean
 
 /**
-  * Created by arache on 15/11/5.
+  * Created by houjun on 15/11/5.
   *
-  * @author arache
+  * @author houjun
   */
 class Money private(private val longValue: Long) {
 

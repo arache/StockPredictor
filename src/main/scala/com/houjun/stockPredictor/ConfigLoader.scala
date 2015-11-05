@@ -5,9 +5,9 @@ import com.houjun.stockPredictor.bean.Money
 import scala.xml.XML
 
 /**
-  * Created by arache on 15/11/6.
+  * Created by houjun on 15/11/6.
   *
-  * @author arache
+  * @author houjun
   */
 trait ConfigLoader {
   val configXml = XML.load(getClass.getClassLoader.getResource("config.xml"))

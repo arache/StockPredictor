@@ -3,9 +3,9 @@ package com.houjun.stockPredictor.bean
 import scala.collection.mutable
 
 /**
-  * Created by arache on 15/11/5.
+  * Created by houjun on 15/11/5.
   *
-  * @author arache
+  * @author houjun
   */
 class CandleStick(
                    val date: String,

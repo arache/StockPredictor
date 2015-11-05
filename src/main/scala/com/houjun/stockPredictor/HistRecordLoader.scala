@@ -5,9 +5,9 @@ import com.houjun.stockPredictor.bean.{CandleStick, Money}
 import scala.io.Source
 
 /**
-  * Created by arache on 15/11/5.
+  * Created by houjun on 15/11/5.
   *
-  * @author arache
+  * @author houjun
   */
 object HistRecordLoader {
   def loadFile(file: Source) = {
