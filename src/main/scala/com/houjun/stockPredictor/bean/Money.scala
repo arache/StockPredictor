@@ -1,6 +1,7 @@
 package com.houjun.stockPredictor.bean
 
 import scala.runtime.RichDouble
+import scala.util.Try
 
 /**
   * Created by houjun on 15/11/5.
@@ -40,7 +41,7 @@ object Money {
     case _ => MONEY0
   }
 
-  def apply(baseValue: String): Money = this (baseValue.toDouble)
+  def apply(baseValue: String): Money = this (Try(baseValue.toDouble).getOrElse(0.0))
 
   implicit def money2RichDouble(money: Money): RichDouble = new RichDouble(money.value)
 }
