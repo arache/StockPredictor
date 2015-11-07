@@ -1,5 +1,7 @@
 package com.houjun.stockPredictor.bean
 
+import scala.runtime.RichDouble
+
 /**
   * Created by houjun on 15/11/5.
   *
@@ -15,10 +17,7 @@ class Money private(private val longValue: Long) {
 
   def /(m: Int) = new Money((this.longValue.toDouble / m).toLong)
 
-  def >(that: Money) = this.longValue > that.longValue
-
-  def <(that: Money) = this.longValue < that.longValue
-
+  def /(that: Money) = this.longValue.toDouble / that.longValue
 
   override def equals(that: scala.Any): Boolean = that match {
     case that: Money => this.longValue == that.longValue
@@ -42,4 +41,6 @@ object Money {
   }
 
   def apply(baseValue: String): Money = this (baseValue.toDouble)
+
+  implicit def money2RichDouble(money: Money): RichDouble = new RichDouble(money.value)
 }
