@@ -12,7 +12,7 @@ import scala.xml.XML
 trait ConfigLoader {
   val configXml = XML.load(getClass.getClassLoader.getResource("config.xml"))
 
-  def initPossession = (configXml \ "init-settings" \ "possession" \ "@value").text
+  def initPossession = (configXml \ "init-settings" \ "possession" \ "@value").text.toInt
 
   def initMoney = Money((configXml \ "init-settings" \ "money" \ "@value").text)
 
