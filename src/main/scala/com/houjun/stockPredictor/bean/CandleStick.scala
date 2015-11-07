@@ -11,20 +11,20 @@ class CandleStick(
                    val date: String,
                    val symbol: Symbol,
                    val stockName: String,
-                   val closePrice: Money = Money.MONEY0,
-                   val highPrice: Money = Money.MONEY0,
-                   val lowPrice: Money = Money.MONEY0,
-                   val openPrice: Money = Money.MONEY0,
-                   val pClosePrice: Money = Money.MONEY0,
-                   val changeValue: Money = Money.MONEY0,
-                   val changeRate: Double = 0.0,
-                   val turnoverRate: Double = 0.0,
-                   val volume: Double = 0.0,
-                   val turnover: Double = 0.0,
-                   val totalMarketCapitalization: Double = 0.0,
-                   val circulationMarketValue: Double = 0.0) extends Ordered[CandleStick] {
+                   var closePrice: Money = Money.MONEY0,
+                   var highPrice: Money = Money.MONEY0,
+                   var lowPrice: Money = Money.MONEY0,
+                   var openPrice: Money = Money.MONEY0,
+                   var pClosePrice: Money = Money.MONEY0,
+                   var changeValue: Money = Money.MONEY0,
+                   var changeRate: Double = 0.0,
+                   var turnoverRate: Double = 0.0,
+                   var volume: Double = 0.0,
+                   var turnover: Double = 0.0,
+                   var totalMarketCapitalization: Double = 0.0,
+                   var circulationMarketValue: Double = 0.0) extends Ordered[CandleStick] {
 
-  override def toString: String = s"$date $symbol $stockName C:$closePrice H:$highPrice L:$lowPrice O:$openPrice PC:$pClosePrice CR:$changeRate"
+  override def toString: String = s"$date $symbol $stockName C:$closePrice H:$highPrice L:$lowPrice O:$openPrice PC:$pClosePrice CR:$changeRate $indicators"
 
   override def compare(that: CandleStick): Int = this.date compare that.date
 
