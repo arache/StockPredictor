@@ -29,7 +29,7 @@
             <parameter name="spread" value="0.02"/>
         </strategy>
         <strategy name="VWAP_TURN">
-            <parameter name="days" value="50"/>
+            <parameter name="days" value="26"/>
             <parameter name="continue_days" value="1"/>
         </strategy>
     </strategy-settings>
