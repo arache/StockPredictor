@@ -14,7 +14,7 @@ trait Strategy extends ConfigLoader {
 
   def getParameterMap: Map[String, String]
 
-  protected def loadParameters2Map: Map[String, String] = {
+  protected def loadParameters2Map(): Map[String, String] = {
     val strategyConfig = (configXml \ "strategy-settings" \ "strategy").toList.filter(node => (node \ "@name").text == getStrategyName)
 
     strategyConfig match {
