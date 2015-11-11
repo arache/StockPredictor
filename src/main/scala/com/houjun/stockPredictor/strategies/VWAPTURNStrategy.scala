@@ -105,7 +105,9 @@ class VWAPTURNStrategy extends AbstractStrategy("VWAP_TURN") {
 
     val commission = commissionMin max Money(netTradeAmount * commissionRate)
 
-    val grossTradeAmount = netTradeAmount - commission
+    val tax = netTradeAmount * taxRate
+
+    val grossTradeAmount = netTradeAmount - commission - tax
 
     currentPossession -= lotsWeCanSell
     availablePossession = 0
