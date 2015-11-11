@@ -9,12 +9,16 @@ import java.net.{URLConnection, URL}
   * @author houjun
   */
 object DataDownloader {
-  val URL1 = "http://quotes.money.163.com/service/chddata.html?code=0"
+  val URL_SH = "http://quotes.money.163.com/service/chddata.html?code=0"
+  val URL_SZ = "http://quotes.money.163.com/service/chddata.html?code=1"
   val URL2 = "&start="
   val URL3 = "&end="
   val URL4 = "&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP"
 
-  def buildURL(symbol: String, startDate: String, endDate: String): String = URL1 + symbol + URL2 + startDate + URL3 + endDate + URL4
+  def buildURL(symbol: String, startDate: String, endDate: String): String =
+    if (symbol.startsWith("6")) URL_SH + symbol + URL2 + startDate + URL3 + endDate + URL4
+    else URL_SZ + symbol + URL2 + startDate + URL3 + endDate + URL4
+
 
   def httpDownloader(httpURL: String, saveFile: String): Boolean = {
     var byteSum: Int = 0
